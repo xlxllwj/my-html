@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="航空航天科技，探索未来科技">
+  <title>航空航天科技公司</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: black;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px 0;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: inline-block;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: inline-block;
+      float: right;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+
+    .hero {
+      position: relative;
+      height: 80vh;
+      background-image: url('img/19h.gif');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .hero h1 {
+      font-size: 60px;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero button {
+		
+		
+		  width: 110px;
+		  height: 110px;
+		  padding: 0;
+		  border-radius: 50%; /* 使按钮变为圆形 */
+		  transition: background-color 0.3s, transform 0.3s;
+		
+
+		
+      padding: 15px 30px;
+      background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s, transform 1s ease-in-out, border-radius 1s ease-in-out; /* 改进的过渡 */
+      margin-top: 20px;
+    }
+
+    /* 鼠标悬停时按钮放大 */
+    .hero button:hover {
+      background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+      transform: scale(1.1);
+    }
+
+    /* 旋转动画 */
+    @keyframes rotate360 {
+      0% {
+        transform: rotate(0deg);
+        border-radius: 5px;
+      }
+	  
+	  10%{
+          background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);	  }
+	  20%{
+		  background-image: linear-gradient(to top, #fdcbf1 0%, #fdcbf1 1%, #e6dee9 100%);
+	  }
+	  30%{
+	  		 background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+	  }
+	  40%{
+	  		 background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+	  }
+	  60%{
+	  		  background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+	  }
+	  70%{
+	  		  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+	  }
+	  80%{
+	  		 background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+	  }
+	  90%{
+	  		  background-image: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
+	  }
+     50%{
+        transform: rotate(360deg);
+        border-radius: 50%; /* 旋转结束时按钮变圆 */
+		background-image: 
+		linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+      }
+	  100%{
+		   transform: rotate(720deg);
+		    border-radius: 5%;
+		  
+	  }
+    }
+
+    .rotating {
+      animation: rotate360 4s ease ;
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 40px 0;
+      font-size: 36px;
+    }
+
+    .related-news-wrapper {
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .related-news-title {
+      position: relative;
+      display: inline-block;
+      background-color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out, width 0.5s ease-in-out;
+      width: auto;
+      white-space: nowrap;
+    }
+
+    .related-news-title:hover {
+      background-color: #f0f0f0;
+    }
+
+    .additional-info span {
+      margin: 0 15px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #003366;
+    }
+
+    .additional-info span:hover {
+      text-decoration: underline;
+    }
+
+    .related-news {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 20px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .news-item {
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .news-item:hover {
+      transform: scale(1.05);
+    }
+
+    .news-item h3 {
+      font-size: 20px;
+      color: #003366;
+    }
+
+    .news-item p {
+      font-size: 14px;
+      color: #555;
+      margin: 10px 0;
+    }
+
+    .news-item a {
+      color: #003366;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+	   transition: color 0.3s;
+    }
+	
+	footer a:hover {
+	  color: #ffcc00;
+	}
+	 
+	
+	
+	/* 左侧图片滚动容器 */
+	.image-scroll {
+	  position: fixed;
+	  top: 100px; /* 距离顶部的距离 */
+	  right: 0;
+	  width: 150px; /* 设置容器的宽度 */
+	  height: 60vh; /* 设置容器的高度为视口的 90% */
+	  overflow: hidden;
+	  background-color: black; /* 背景色，可以自定义 */
+	  border-radius: 10px;
+	  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	}
+	
+	/* 图片滚动容器内部样式 */
+	.image-scroll-wrapper {
+	  display: flex;
+	  flex-direction: column;
+	  animation: scrollImages 10s linear infinite;
+	}
+	
+	/* 图片样式 */
+	.image-scroll-wrapper p {
+	  width: 100%;
+	  height: auto;
+	  margin-bottom: 10px;
+	  border-radius: 5px;
+	  color: white;
+	  font-size: 50px;
+	  text-align: center;
+	  animation: fadeText 5s ease-in-out infinite;
+	}
+	
+	/* 滚动动画 */
+	@keyframes scrollImages {
+	  0% ,100%{
+	    transform: translateY(0);
+	  }
+	  
+	  25% {
+	    transform: translateY(-100%); /* 向上滚动 100% */
+	  }
+	  50%{
+		  
+		   transform: translateY(100%);
+		  
+	  }
+	} 
+	
+	
+	@keyframes fadeText {
+	  0% { opacity: 0; }
+	  50% { opacity: 1; }
+	  100% { opacity: 0; }
+	}
+	 
+	
+	.carousel-container {
+		position: relative;
+		width: 100%;
+		max-width: 600px;
+		margin: 30px auto;
+		border: 2px solid #fff;
+		border-radius: 8px;
+		overflow: hidden;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	    }
+	
+	    .carousel-images {
+	      display: flex;
+	      transition: transform 0.5s ease;
+	    }
+	
+	    .carousel-images img {
+	      width: 100%;
+	      height: auto;
+	    }
+	
+	    .nav-button {
+	      position: absolute;
+	      top: 50%;
+	      transform: translateY(-50%);
+	      background-color: rgba(0, 0, 0, 0.5);
+	      color: white;
+	      font-size: 24px;
+	      border: none;
+	      padding: 10px;
+	      z-index: 2;
+	    }
+	
+	    .prev {
+	      left: 10px;
+	    }
+	
+	    .next {
+	      right: 10px;
+	    }
+	
+	    .dots-container {
+	      position: absolute;
+	      bottom: 10px;
+	      left: 50%;
+	      transform: translateX(-50%);
+	      display: flex;
+	    }
+	
+	    .dot {
+	      width: 10px;
+	      height: 10px;
+	      margin: 0 5px;
+	      border-radius: 50%;
+	      background-color: white;
+	      cursor: pointer;
+	    }
+	
+	    .active {
+	      background-color: purple;
+	    }
+	
+
+
+.fg{
+	
+	    z-index: 3;
+	    background-color: black;
+	    position: absolute;
+	    width: 100%;
+	    height: 190px;
+	    top: 590px;
+	
+}
+
+.fzs{
+	left: 10px;
+	width: 400px;
+	height: 500px;
+	top: 100px;
+	position:absolute;
+	background-color: black;
+	
+	
+}
+
+
+.bt ,.bt1{
+	width: 200px;
+  color: white;
+	 left: 130px;
+	 position: absolute;
+	
+	
+}
+
+.bt p{
+	
+	font-size: 30px;
+	
+}
+
+.bt1{
+	width: 400px;
+	left: 10px;
+	top: 60px;
+	
+	
+}
+
+.sz{
+	background-color:black;
+	width: 400px;
+	height: 500px;
+	position: absolute;
+	right: 100px;
+	top: 100px;
+	
+}
+
+.lc{
+	position: absolute;
+	left: 90px;
+	
+	
+}
+.lc p{
+	font-size: 30px;
+	color: white;
+}
+
+
+.scroll-text {
+            width: 380px; /* 设置宽度 */
+            height: 290px; /* 设置高度 */
+            overflow: auto; /* 超出部分显示滚动条 */
+          /* 可选：为div添加边框 */
+            padding: 10px;
+			background-color: black;
+			position: absolute;
+			top: 80px;
+			color: white;
+			}
+			.an{
+				
+				background-color: black;
+				position: fixed;
+				width: 50px;
+				height: 20px;
+				top: 780px;
+				right: 0%;
+				
+				
+			}
+			
+			.an1:hover{
+				
+				transform: scale(1.2);
+				background-color: #16d9e3;
+				
+				
+			}
+			
+			
+			.an1{
+				
+				border-radius: 10%;
+				width: 50px;
+			}
+  </style>
+  
+  
+</head>
+<body>
+
+  <!-- 顶部导航栏 -->
+  <header id="id1">
+    <div class="container">
+      <div class="logo" >国家航空航天历程与介绍</div>
+      <nav>
+        <a href="index.html">首页</a>
+        <a href="products.html">探月工程</a>
+        <a href="technology.html">国家航天员</a>
+        <a href="contact.html">联系反馈</a>
+      </nav>
+    </div>
+  </header>
+  <div class="fg"></div>
+  
+  <section class="image-scroll">
+      <div class="image-scroll-wrapper">
+      <p>广</p>
+	  <p>告</p>
+	  <p>招</p>
+	  <p>租</p>
+      </div>
+    </section>
+	
+	
+	<section>
+		<div class="fzs">
+			<div class="bt"><p >航空发展历史</p></div>
+			<div class="bt1"><p>（1）东方红一号——中国第一颗人造卫星
+1970 年4月24日中国第一颗人造卫星“东方红1 号”成功升空。成为了中国航天发展史上第一个里程碑。
+<br>（2） 载人航天
+2003 年10 月15 日，中国神舟五号载人飞船升空，表明中国掌握载人航天技术，成为中国航天事业发展史上的第三个里程碑。
+<br>（3）深空探测-嫦娥奔月
+2007年10月24日18时05分，随着嫦娥一号成功奔月，嫦娥工程顺利完成了一期工程。
+此后，神舟九号与天宫一号相继发射，并成功对接。
+2016年9月15日22时04分09秒，天宫二号空间实验室在酒泉卫星发射中心发射成功</p></div>
+		</div>
+		<div class="sz">
+			<div class="lc"><p>神州系列发展历程</p></div>
+			<div class="scroll-text">神舟一号
+发射时间：1999年11月20日
+神舟一号，简称“神一”，是中国载人航天工程发射的第一艘飞船，
+也是中华人民共和国载人航天计划中发射的第一艘无人试验飞船。
+<br>
+神舟二号
+发射时间：2001年01月10日
+神舟二号，简称“神二”，是中国载人航天工程发射的第二艘飞船，也是中国第一艘正样无人飞船。
+<br>
+神舟三号
+发射时间：2002年03月25日
+神舟三号，简称“神三”，是中国载人航天工程发射的第三艘飞船，为一艘正样无人飞船。
+<br>
+神舟四号
+发射时间：2002年12月30日
+神舟四号，简称“神四”，是中国载人航天工程发射的第四艘飞船。
+<br>
+神舟五号
+发射时间：2003年10月15日
+神舟五号（Shenzhou V，简称“神五”），是中国载人航天工程发射的第五艘飞船，
+也是中华人民共和国发射的第一艘载人航天飞船。
+<br>
+神舟六号
+发射时间：2005年10月12日
+神舟六号，简称“神六”，为中国载人航天工程发射的第六艘飞船
+<br>
+神舟七号
+发射时间：2008年09月25日
+神舟七号（Shenzhou VII，简称：神七），是中国载人航天工程发射的第七艘飞船
+<br>
+神舟八号
+发射时间：2011年11月01日
+神舟八号，简称“神八”，为中国载人航天工程发射的第八艘飞船
+<br>
+神舟九号
+发射时间：2012年06月16日
+神舟九号，简称“神九”，为中国载人航天工程发射的第九艘飞船
+<br>
+神舟十号
+发射时间：2013年06月11日
+神舟十号，简称“神十”，是中国载人航天工程发射的第十艘飞船
+<br>
+神舟十一号
+发射时间：2016年10月17日
+神舟十一号，简称“神十一”，为中国载人航天工程发射的第十一艘飞船
+<br>
+神舟十二号
+发射时间：2021年06月17日
+神舟十二号（Shenzhou Ⅻ 或 Shenzhou-12，简称：神十二”）
+<br>
+神舟十三号
+发射时间：2021年10月16日
+神舟十三号（Shenzhou XIII 或 Shenzhou-13，简称“神十三”）
+<br>
+神舟十四号
+发射时间：2022年06月05日
+神舟十四号（英文：Shenzhou-14，英文又称：Shenzhou XIV，简称：神十四）
+<br>
+神舟十五号
+发射时间：2022年11月29日
+神舟十五号（英文：Shenzhou-15，又称：Shenzhou XV，简称：神十五）
+<br>
+神舟十六号
+发射时间：2023年05月30日
+神舟十六号（Shenzhou XVI 或 Shenzhou-16，简称：神十六）
+<br>
+神舟十七号
+发射时间：2023年10月26日
+神舟十七号（Shenzhou XVII，简称：神十七）
+<br>
+神舟十八号
+发射时间：2024年4月25日
+神舟十八号（英文：Shenzhou-18或 Shenzhou XVIII）
+<br>
+神舟十九号
+发射时间：2024年10月30日
+神舟十九号（英文：Shenzhou-19或 Shenzhou XIX）
+
+
+
+</div>
+		</div>
+		
+	</section>
+	
+	
+	 <div class="carousel-container">
+	    <div class="carousel-images">
+	      <img src="img/hj.jpg" alt="Image 1">
+	      <img src="img/wx.jpg" alt="Image 2">
+	      <img src="img/htq.jpg" alt="Image 3">
+	    </div>
+	    <button class="nav-button prev">&#60;</button>
+	    <button class="nav-button next">&#62;</button>
+	
+	    <div class="dots-container">
+	      <div class="dot active"></div>
+	      <div class="dot"></div>
+	      <div class="dot"></div>
+	    </div>
+	  </div>
+	
+
+  <!-- 首页大图 -->
+  <section class="hero">
+    <h1>征途无限，逐梦九天</h1>
+    <button id="techButton">点击了解更多</button>
+  </section>
+
+  <!-- 相关报道 -->
+  <section class="related-news-wrapper">
+    <div class="container">
+      <div class="related-news-title">
+        国内外相关报道
+        <div class="additional-info">
+          <span id="domestic">国内报道</span> | <span id="international">国外报道</span>
+        </div>
+      </div>
+
+      <div class="related-news" id="newsContainer">
+        <div class="news-item domestic">
+          <h3>航天强国建设迈出坚实步伐</h3>
+          <p>飞天逐梦，揽月摘星。中国航天在太空书写下一个个“中国式浪漫”</p>
+          <a href="pg1.html" target="_blank">查看详情</a>
+        </div>
+        <div class="news-item domestic">
+          <h3>火星探测新进展</h3>
+          <p>中国探测器成功登陆火星并传回高清图像，开启新的探索篇章。</p>
+          <a href="pg3.html" target="_blank">查看详情</a>
+        </div>
+        <div class="news-item domestic">
+          <h3>月球土壤采集</h3>
+          <p>嫦娥六号上升器携带月球样品自月球背面起飞，随后成功进入预定环月轨道。</p>
+          <a href="pg2.html" target="_blank">查看详情</a>
+        </div>
+        <div class="news-item international">
+          <h3>震惊！震惊！外媒热议......</h3>
+          <p>法新社、路透社等境外主流媒体高度评价中国载人航天事业取得的又一重大成就。。</p>
+          <a href="pg4.html" target="_blank">查看详情</a>
+        </div>
+        <div class="news-item international">
+          <h3>在国外刷屏的原来是这件事......</h3>
+          <p>报道称，中国载人航天的发展速度令人印象深刻</p>
+          <a href="pg5.html" target="_blank">查看详情</a>
+        </div>
+        <div class="news-item international">
+          <h3>这件事引起国际讨论......</h3>
+          <p>中国国家航天局对外宣布，国际月球科研站“朋友圈”新增三名成员。</p>
+          <a href="pg6.html" target="_blank">查看详情</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <p>&copy; 6020232849 许立鑫 | <a href="ystk.html">隐私政策（可点击）</a> | 
+	数据2305 </p>
+  </footer>
+  <div class="an">
+  	  <a href="#id1"><button  class="an1" >点击回到顶部</button></a>
+  	  
+  	  
+  	  
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // 处理按钮点击，旋转并跳转
+    document.getElementById('techButton').onclick = function() {
+      const button = this;
+      
+      // 添加旋转动画类
+      button.classList.add('rotating');
+      
+      // 监听动画结束事件
+      button.addEventListener('animationend', function() {
+        // 动画结束后跳转到目标页面
+        window.location.href = 'ljgd.html'; // 替换为目标页面的 URL
+      });
+    };
+  
+    // 切换国内外新闻的显示
+    document.getElementById('domestic').addEventListener('click', function() {
+      // 显示国内新闻，隐藏国外新闻
+      document.querySelectorAll('.news-item.domestic').forEach(item => {
+        item.style.display = 'block';
+      });
+      document.querySelectorAll('.news-item.international').forEach(item => {
+        item.style.display = 'none';
+      });
+    });
+  
+    document.getElementById('international').addEventListener('click', function() {
+      // 显示国外新闻，隐藏国内新闻
+      document.querySelectorAll('.news-item.international').forEach(item => {
+        item.style.display = 'block';
+      });
+      document.querySelectorAll('.news-item.domestic').forEach(item => {
+        item.style.display = 'none';
+      });
+    });
+  
+    // 默认显示国内新闻
+      document.getElementById('domestic').click();
+	
+	let currentIndex = 0;
+	    const images = document.querySelectorAll('.carousel-images img');
+	    const dots = document.querySelectorAll('.dot');
+	    const totalImages = images.length;
+	
+	    function updateCarousel(index) {
+	      const carousel = document.querySelector('.carousel-images');
+	      carousel.style.transform = `translateX(${-index * 100}%)`;
+	
+	      // Update active dot
+	      dots.forEach(dot => dot.classList.remove('active'));
+	      dots[index].classList.add('active');
+	    }
+	
+	    document.querySelector('.prev').addEventListener('click', () => {
+	      currentIndex = (currentIndex === 0) ? totalImages - 1 : currentIndex - 1;
+	      updateCarousel(currentIndex);
+	    });
+	
+	    document.querySelector('.next').addEventListener('click', () => {
+	      currentIndex = (currentIndex === totalImages - 1) ? 0 : currentIndex + 1;
+	      updateCarousel(currentIndex);
+	    });
+	
+	    // Optionally, auto-slide every 3 seconds
+	    setInterval(() => {
+	      currentIndex = (currentIndex === totalImages - 1) ? 0 : currentIndex + 1;
+	      updateCarousel(currentIndex);
+	    }, 3000);  // Auto-slide every 3 seconds
+	
+	
+  </script>
+
+</body>
+</html>
